@@ -1,0 +1,14 @@
+<%= render 'shared/header' %>
+
+<div class="article-lists">
+  <%= form_with model: @article, url:articles_path, local: true do |f| %>
+    
+    <%= render partial: "shared/article_form", locals: { article: @article, f: f } %>
+
+    <div class="article-footer">
+      <%= f.submit "投稿する", id: "submit", class:"btn btn-radius" %>
+    </div>
+  <% end %>
+</div>
+
+<%= render 'shared/footer' %>
